@@ -1,0 +1,49 @@
+{
+  "name": "sequelize-migration-builder",
+  "version": "1.0.0",
+  "main": "bin/cli.js",
+  "scripts": {
+    "start": "node bin/cli.js"
+  },
+  "bin": {
+    "migrator-plugin": "./bin/cli.js"
+  },
+  "keywords": [
+    "sequelize",
+    "migration",
+    "generator",
+    "sequelize-migration"
+  ],
+  "author": "Shubham Yadav <yshubham2107@gmail.com>",
+  "license": "MIT",
+  "description": "A tool for generating Sequelize migrations based on model definitions.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/shubhamy4ever/sequelize-migration-builder.git"
+  },
+  "homepage": "https://github.com/shubhamy4ever/sequelize-migration-builder",
+  "bugs": {
+    "url": "https://github.com/shubhamy4ever/sequelize-migration-builder/issues"
+  },
+  "dependencies": {
+    "commander": "^12.1.0",
+    "ejs": "^3.1.10",
+    "fs-extra": "^11.2.0",
+    "prettier": "^3.4.2",
+    "sqlite3": "^5.1.7"
+  },
+  "peerDependencies": {
+    "mysql2": ">=3.0.0",
+    "sequelize": ">=6.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "files": [
+    "bin",
+    "src",
+    "templates",
+    "README.md",
+    "LICENSE"
+  ]
+}

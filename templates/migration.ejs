@@ -1,0 +1,27 @@
+module.exports = {
+up: async (queryInterface, Sequelize) => {
+await queryInterface.createTable('<%= model.name %>', {
+  <% Object.entries(model.schema).forEach(([key, value], index, array)=> { %>
+    <%- key %>: {
+      <% Object.entries(value).forEach(([propKey, propValue], i, propsArray)=> { %>
+        <% if (propValue !==undefined) { %>
+          <% if (propKey==='references' ) { %>
+            references: {
+            model: '<%- propValue.model %>',
+              key: '<%- propValue.key %>',
+                }<%- i < propsArray.length - 1 ? ',' : '' %>
+                  <% } else { %>
+                    <%- propKey %>: <%- typeof propValue==='string' ? propValue : JSON.stringify(propValue) %><%- i <
+                          propsArray.length - 1 ? ',' : '' %>
+                          <% } %>
+                            <% } %>
+                              <% }); %>
+                                }<%- index < array.length - 1 ? ',' : '' %>
+                                  <% }); %>
+                                    });
+                                    },
+
+                                    down: async (queryInterface) => {
+                                    await queryInterface.dropTable('<%= model.name %>');
+                                      },
+                                      };

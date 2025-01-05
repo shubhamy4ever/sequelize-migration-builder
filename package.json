@@ -1,6 +1,6 @@
 {
   "name": "sequelize-migration-builder",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "bin/cli.js",
   "scripts": {
     "start": "node bin/cli.js"
@@ -9,9 +9,10 @@
     "migrator-plugin": "./bin/cli.js"
   },
   "keywords": [
+    "sequelize-migration-builder",
     "sequelize",
     "migration",
-    "generator",
+    "builder",
     "sequelize-migration"
   ],
   "author": "Shubham Yadav <yshubham2107@gmail.com>",

@@ -100,12 +100,19 @@ function extractModelDefinition(modelImport) {
               key: value.references.key,
             };
           }
+
+          // if default value is string
+          const defaultValue =
+          typeof value.defaultValue === "string"
+            ? `"${value.defaultValue}"`
+            : value.defaultValue;
+
           return [
             key,
             {
               type: value.type.key, // sequelize data type (e.g: STRING, INTEGER)
               allowNull: value.allowNull,
-              defaultValue: value.defaultValue,
+              defaultValue,
               primaryKey: value.primaryKey,
               unique: value.unique,
               autoIncrement: value.autoIncrement,
